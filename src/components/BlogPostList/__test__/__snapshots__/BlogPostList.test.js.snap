@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <h1>
+    Blog
+  </h1>
+  <div
+    className="infinite-scroll-component__outerdiv"
+    style={Object {}}
+  >
+    <div
+      className="infinite-scroll-component "
+      style={
+        Object {
+          "WebkitOverflowScrolling": "touch",
+          "height": "auto",
+          "overflow": "auto",
+        }
+      }
+    >
+      <div
+        className="container"
+        data-testid="blog-post-list-item"
+        onClick={[Function]}
+      >
+        <div
+          className="title"
+          data-testid="blog-post-list-item-title"
+        >
+          title 1
+        </div>
+        <div
+          className="description"
+          data-testid="blog-post-list-item-description"
+        >
+          description 1
+        </div>
+        <div
+          className="commentCount"
+          data-testid="blog-post-list-item-comment-count"
+        >
+          Number of comments: 3
+        </div>
+      </div>
+      <div
+        className="container"
+        data-testid="blog-post-list-item"
+        onClick={[Function]}
+      >
+        <div
+          className="title"
+          data-testid="blog-post-list-item-title"
+        >
+          title 2
+        </div>
+        <div
+          className="description"
+          data-testid="blog-post-list-item-description"
+        >
+          description 2
+        </div>
+        <div
+          className="commentCount"
+          data-testid="blog-post-list-item-comment-count"
+        >
+          Number of comments: 3
+        </div>
+      </div>
+      <div
+        className="container"
+        data-testid="blog-post-list-item"
+        onClick={[Function]}
+      >
+        <div
+          className="title"
+          data-testid="blog-post-list-item-title"
+        >
+          title 3
+        </div>
+        <div
+          className="description"
+          data-testid="blog-post-list-item-description"
+        >
+          description 3
+        </div>
+        <div
+          className="commentCount"
+          data-testid="blog-post-list-item-comment-count"
+        >
+          Number of comments: 3
+        </div>
+      </div>
+      <div
+        className="container"
+        data-testid="blog-post-list-item"
+        onClick={[Function]}
+      >
+        <div
+          className="title"
+          data-testid="blog-post-list-item-title"
+        >
+          title 4
+        </div>
+        <div
+          className="description"
+          data-testid="blog-post-list-item-description"
+        >
+          description 4
+        </div>
+        <div
+          className="commentCount"
+          data-testid="blog-post-list-item-comment-count"
+        >
+          Number of comments: 3
+        </div>
+      </div>
+      <div
+        className="container"
+        data-testid="blog-post-list-item"
+        onClick={[Function]}
+      >
+        <div
+          className="title"
+          data-testid="blog-post-list-item-title"
+        >
+          title 5
+        </div>
+        <div
+          className="description"
+          data-testid="blog-post-list-item-description"
+        >
+          description 5
+        </div>
+        <div
+          className="commentCount"
+          data-testid="blog-post-list-item-comment-count"
+        >
+          Number of comments: 3
+        </div>
+      </div>
+      <div
+        className="container"
+        data-testid="blog-post-list-item"
+        onClick={[Function]}
+      >
+        <div
+          className="title"
+          data-testid="blog-post-list-item-title"
+        >
+          title 6
+        </div>
+        <div
+          className="description"
+          data-testid="blog-post-list-item-description"
+        >
+          description 6
+        </div>
+        <div
+          className="commentCount"
+          data-testid="blog-post-list-item-comment-count"
+        >
+          Number of comments: 3
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,24 @@
+.container {
+    height: 40vh;
+    min-height: 200px;
+    min-width: 300px;
+    background-color: skyblue;
+    margin: 6px;
+    padding: 5%;
+    position: relative;
+}
+
+.title {
+    font-size: 32px;
+    padding-bottom: 10px;
+}
+
+.description {
+    font-size: 20px;
+}
+
+.dateCreated {
+    position: absolute;
+    bottom: 5%;
+    font-size: 22px;
+}

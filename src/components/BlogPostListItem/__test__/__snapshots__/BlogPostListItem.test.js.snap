@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="container"
+  data-testid="blog-post-list-item"
+  onClick={[Function]}
+>
+  <div
+    className="title"
+    data-testid="blog-post-list-item-title"
+  >
+    title 1
+  </div>
+  <div
+    className="description"
+    data-testid="blog-post-list-item-description"
+  >
+    description 1
+  </div>
+  <div
+    className="commentCount"
+    data-testid="blog-post-list-item-comment-count"
+  >
+    Number of comments: 3
+  </div>
+</div>
+`;

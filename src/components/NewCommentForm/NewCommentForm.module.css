@@ -1,0 +1,22 @@
+.container {
+    min-height: 50px;
+    min-width: 300px;
+    background-color: powderblue;
+    margin: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    min-width: 250px;
+}
+
+.submitButtonLayout {
+    margin-top: 30px;
+}

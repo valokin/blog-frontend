@@ -1,25 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, createContext, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { debounce } from 'lodash';
+
+import BlogPostPage from './pages/BlogPostPage';
+import BlogPage from './pages/BlogPage'
+import { getPosts, loadNextBatchOfComments } from './services/posts';
+
+export const DataContext = createContext({});
 
 function App() {
+  const [postsWithComments, setpostsWithComments] = useState([])
+  const [posts, setPosts] = useState([]);
+  const fetchPostsData = async () => {
+    const posts = await getPosts();
+    setPosts(posts);
+  };
+
+  const debouncedBatchFetchCall = debounce(
+    () => loadNextBatchOfComments(posts, postsWithComments, setpostsWithComments),
+    3000,
+  );
+
+  useEffect(() => {
+    loadNextBatchOfComments(posts, postsWithComments, setpostsWithComments);
+  }, [posts])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataContext.Provider value={{
+      posts,
+      postsWithComments,
+      fetchPostsData,
+      fetchMoreComments: debouncedBatchFetchCall,
+    }}>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route path="/post/:id">
+              <BlogPostPage />
+            </Route>
+            <Route path="/">
+              <BlogPage />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </DataContext.Provider>
   );
 }
+
 
 export default App;

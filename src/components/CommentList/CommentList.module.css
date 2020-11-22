@@ -1,0 +1,27 @@
+.container {
+    /* height: 10vh; */
+
+}
+
+.comment {
+    min-height: 50px;
+    min-width: 300px;
+    background-color: powderblue;
+    margin: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text {
+
+}
+
+.name {
+
+}
+
+.dateCreated {
+
+}
