@@ -16,10 +16,10 @@ export const DataContext = createContext({});
 function App() {
   const [postsWithComments, setpostsWithComments] = useState([])
   const [posts, setPosts] = useState([]);
-  const fetchPostsData = async () => {
+  const fetchPostsData = debounce( async () => {
     const posts = await getPosts();
     setPosts(posts);
-  };
+  }, 500);
 
   const debouncedBatchFetchCall = debounce(
     () => loadNextBatchOfComments(posts, postsWithComments, setpostsWithComments),

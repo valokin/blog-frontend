@@ -11,7 +11,7 @@ const BlogPage = () => {
 
     useEffect(() => {
         fetchPostsData();
-    });
+    }, []);
 
     return (
         <BlogPostList

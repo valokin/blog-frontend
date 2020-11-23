@@ -32,7 +32,7 @@ const BlogPostPage = () => {
         }
     }
 
-    useEffect(initializePageData, [id, postsWithComments])
+    useEffect(initializePageData, [])
 
     return (
         <BlogPostDetails
