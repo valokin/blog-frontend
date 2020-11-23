@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { debounce } from 'lodash';
+import { DEBOUNCE_DURATION_INFINITE_SCROLL_BLOG } from './config';
 
 import BlogPostPage from './pages/BlogPostPage';
 import BlogPage from './pages/BlogPage'
@@ -24,7 +25,7 @@ const useBlogAPI = () => {
 
   const debouncedBatchFetchCall = debounce(
     () => loadNextBatchOfComments(posts, postsWithComments, setpostsWithComments),
-    3000,
+    DEBOUNCE_DURATION_INFINITE_SCROLL_BLOG,
   );
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const useBlogAPI = () => {
     posts,
     postsWithComments,
     fetchPostsData,
-    fetchMoreComments: debouncedBatchFetchCall,
+    fetchMorePostsWithComments: debouncedBatchFetchCall,
   }
 }
 
@@ -44,7 +45,7 @@ function App() {
     posts,
     postsWithComments,
     fetchPostsData,
-    fetchMoreComments 
+    fetchMorePostsWithComments 
   } = useBlogAPI();
 
   return (
@@ -52,7 +53,7 @@ function App() {
       posts,
       postsWithComments,
       fetchPostsData,
-      fetchMoreComments,
+      fetchMorePostsWithComments,
     }}>
       <div className="App">
         <Router>

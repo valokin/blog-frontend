@@ -6,7 +6,7 @@ const BlogPage = () => {
     const { 
         fetchPostsData,
         postsWithComments,
-        fetchMoreComments
+        fetchMorePostsWithComments
     } = useContext(DataContext);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const BlogPage = () => {
     return (
         <BlogPostList
             postsWithComments={postsWithComments}
-            fetchMoreComments={fetchMoreComments}
+            fetchMorePostsWithComments={fetchMorePostsWithComments}
         />
     )
 }

@@ -1,11 +1,12 @@
 import { delay } from './utils';
+import { RATE_LIMIT_COOLDOWN_DURATION, API_DOMAIN } from '../config';
 
 export const getPosts = async () => {
     try {
-        let res = await fetch('https://5ebd9842ec34e900161923e7.mockapi.io/post');
+        let res = await fetch(`${API_DOMAIN}/post`);
         while (res.status === 429) {
-            await delay(10000);
-            res = await fetch('https://5ebd9842ec34e900161923e7.mockapi.io/post');
+            await delay(RATE_LIMIT_COOLDOWN_DURATION);
+            res = await fetch(`${API_DOMAIN}/post`);
         }
         return await res.json();
     }
@@ -16,10 +17,10 @@ export const getPosts = async () => {
 
 export const getPostComments = async (postId) => {
     try {
-        let res = await fetch(`https://5ebd9842ec34e900161923e7.mockapi.io/post/${postId}/comments`);
+        let res = await fetch(`${API_DOMAIN}/post/${postId}/comments`);
         while (res.status === 429) {
-            await delay(10000);
-            res = await fetch(`https://5ebd9842ec34e900161923e7.mockapi.io/post/${postId}/comments`);
+            await delay(RATE_LIMIT_COOLDOWN_DURATION);
+            res = await fetch(`${API_DOMAIN}/post/${postId}/comments`);
         }
         return await res.json();;
     }

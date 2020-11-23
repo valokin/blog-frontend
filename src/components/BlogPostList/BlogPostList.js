@@ -3,7 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import BlogPostListItem from '../BlogPostListItem/BlogPostListItem';
 
-const BlogPostList = ({ postsWithComments, fetchMoreComments }) => {
+const BlogPostList = ({ postsWithComments, fetchMorePostsWithComments }) => {
 
   const history = useHistory();
   return (
@@ -11,7 +11,7 @@ const BlogPostList = ({ postsWithComments, fetchMoreComments }) => {
       <h1>Blog</h1>
       <InfiniteScroll
         dataLength={postsWithComments.length}
-        next={fetchMoreComments}
+        next={fetchMorePostsWithComments}
         hasMore={true}
         loader={<h4>Loading...</h4>}
       >
