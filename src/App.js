@@ -13,13 +13,14 @@ import { getPosts, loadNextBatchOfComments } from './services/posts';
 
 export const DataContext = createContext({});
 
-function App() {
+const useBlogAPI = () => {
   const [postsWithComments, setpostsWithComments] = useState([])
   const [posts, setPosts] = useState([]);
-  const fetchPostsData = debounce( async () => {
+
+  const fetchPostsData = async () => {
     const posts = await getPosts();
     setPosts(posts);
-  }, 500);
+  };
 
   const debouncedBatchFetchCall = debounce(
     () => loadNextBatchOfComments(posts, postsWithComments, setpostsWithComments),
@@ -30,12 +31,28 @@ function App() {
     loadNextBatchOfComments(posts, postsWithComments, setpostsWithComments);
   }, [posts])
 
+  return {
+    posts,
+    postsWithComments,
+    fetchPostsData,
+    fetchMoreComments: debouncedBatchFetchCall,
+  }
+}
+
+function App() {
+  const { 
+    posts,
+    postsWithComments,
+    fetchPostsData,
+    fetchMoreComments 
+  } = useBlogAPI();
+
   return (
     <DataContext.Provider value={{
       posts,
       postsWithComments,
       fetchPostsData,
-      fetchMoreComments: debouncedBatchFetchCall,
+      fetchMoreComments,
     }}>
       <div className="App">
         <Router>
